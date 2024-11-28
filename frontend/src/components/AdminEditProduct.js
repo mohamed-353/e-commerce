@@ -60,6 +60,9 @@ function AdminEditProduct({ onClose, product, productId, fetchAllProducts }) {
       uploadToastId = toast.loading("Uploading image...");
       const uploadImageCloudinary = await uploadImage(compressedFile);
 
+      console.log("compressedFile", compressedFile);
+      console.log("uploadImageCloudinary", uploadImageCloudinary);
+
       // Update the toast with success message
       toast.update(uploadToastId, {
         render: "Image uploaded successfully!",

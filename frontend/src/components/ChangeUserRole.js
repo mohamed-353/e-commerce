@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { IoMdClose } from "react-icons/io";
@@ -39,6 +39,10 @@ function ChangeUserRole({ name, email, role, userId, onClose, callFunc }) {
       console.error("Role update error:", error);
     }
   };
+
+  useEffect(() => {
+
+  }, [userRole]);
 
   return (
     <div className="fixed inset-0 w-full h-full z-10 flex justify-center items-center bg-slate-200 bg-opacity-60">

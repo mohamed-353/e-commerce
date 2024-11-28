@@ -98,8 +98,7 @@ function Header() {
           <div className="relative flex justify-center">
 
             <div
-              onMouseEnter={disableMenu ? () => { } : () => setMenuDisplay((prev) => !prev)}
-              onMouseLeave={disableMenu ? () => { } : () => setMenuDisplay((prev) => !prev)}
+              onClick={disableMenu ? () => { } : () => setMenuDisplay((prev) => !prev)}
               className={`${!disableMenu && "cursor-pointer"} relative flex justify-center`}
             >
               {user?.profilePic ? (

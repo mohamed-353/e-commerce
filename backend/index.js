@@ -11,7 +11,7 @@ app.use(express.json({ limit: '6mb' }));
 app.use(cookieParser());
 
 app.use(cors({
-  origin: ["https://e-commerce-frontend-three-coral.vercel.app", "http://localhost:3000"],
+  origin: ["http://localhost:3000", process.env.FRONTEND_URL],
   methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
   credentials: true,
 }));

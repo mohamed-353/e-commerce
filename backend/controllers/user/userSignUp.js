@@ -61,7 +61,7 @@ const userSignUp = asyncWrapper(async (req, res, next) => {
     password: hashPassword,
   };
 
-  if (!user) {
+  if (!user[0]) {
     payload.role = userRoles.MANAGER;
   } else {
     payload.role = userRoles.USER;
