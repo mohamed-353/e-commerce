@@ -40,10 +40,6 @@ function ChangeUserRole({ name, email, role, userId, onClose, callFunc }) {
     }
   };
 
-  useEffect(() => {
-
-  }, [userRole]);
-
   return (
     <div className="fixed inset-0 w-full h-full z-10 flex justify-center items-center bg-slate-200 bg-opacity-60">
       <div className="bg-white shadow-md p-6 w-full max-w-lg">

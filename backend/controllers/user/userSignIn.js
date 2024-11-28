@@ -49,7 +49,7 @@ const userSignIn = asyncWrapper(async (req, res, next) => {
     res.cookie("token", token, tokenOptions).status(StatusCodes.OK).json({
       success: true,
       status: httpStatusText.SUCCESS,
-      data: token,
+      data: { token },
       message: "login Successfully",
       code: StatusCodes.OK,
     });

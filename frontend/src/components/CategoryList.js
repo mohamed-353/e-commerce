@@ -9,7 +9,6 @@ const CategoryList = () => {
 
   const categoryLoading = new Array(13).fill(null)
 
-
   const fetchProductCategory = async () => {
     setLoading(true)
     const response = await axios.get(summaryApi.productCategory.url, {
@@ -24,7 +23,7 @@ const CategoryList = () => {
 
   useEffect(() => {
     fetchProductCategory()
-  },[])
+  }, [])
 
   return (
     <div className='container mx-auto p-4'>
