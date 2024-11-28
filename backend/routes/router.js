@@ -36,7 +36,7 @@ const filterProduct = require("../controllers/product/filterProduct");
 router.post("/signUp", userSignUp);
 router.post("/signIn", userSignIn);
 router.get("/userDetails", verifyToken, userDetails);
-router.post("/userLogout", userLogout);
+router.get("/userLogout", verifyToken, userLogout);
 
 // admin panel
 router.get("/allUsers", verifyToken, allowed, allUsers)

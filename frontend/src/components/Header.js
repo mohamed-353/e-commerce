@@ -34,7 +34,7 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.post(summaryApi.userLogout.url, {
+      const response = await axios.get(summaryApi.userLogout.url, {
         withCredentials: true,
       });
 

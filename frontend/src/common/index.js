@@ -15,7 +15,7 @@ const summaryApi = {
   },
   userLogout: {
     url: `${backendDomain}/api/userLogout`,
-    method: "post",
+    method: "get",
   },
   allUsers: {
     url: `${backendDomain}/api/allUsers`,
