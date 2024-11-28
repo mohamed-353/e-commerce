@@ -38,6 +38,7 @@ function Header() {
         withCredentials: true,
       });
       const responseData = response.data;
+      console.log("before", responseData);
 
       if (responseData.success) {
         dispatch(setUserDetails(null));
