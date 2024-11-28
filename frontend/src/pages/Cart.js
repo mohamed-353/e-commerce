@@ -76,7 +76,7 @@ const Cart = () => {
   }
 
   const handleCountPrice = () => {
-    console.log(products[0]?.sellingPrice)
+    handleCountQuantity()
     const price = products.map((ele, index) => ele?.sellingPrice * quantity[index]);
     const totalPrice = price.reduce((a, b) => a + (b || 0), 0);
     setTotalPrice(totalPrice);
@@ -110,12 +110,17 @@ const Cart = () => {
         return;
       };
     });
+    
+    handleCountQuantity();
+    handleCountPrice()
+
     await context.fetchAddToCartCount()
   };
 
   useEffect(() => {
     fetchCartProducts();
     fetchGetQuantity();
+    handleCountPrice()
   }, []);
 
   useEffect(() => {
