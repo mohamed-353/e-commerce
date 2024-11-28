@@ -71,18 +71,6 @@ function Header() {
     }
   }, [user, context.cartProductCount]);
 
-  useEffect(() => {
-    const closeMenu = (e) => {
-      if (!e.target.closest(".menu-container")) {
-        setMenuDisplay(false);
-      }
-    };
-
-    document.addEventListener("click", closeMenu);
-    return () => document.removeEventListener("click", closeMenu);
-  }, []);
-
-
   return (
     <header className="h-20 shadow-md bg-white fixed w-full z-50">
       <div className="h-full container mx-auto flex items-center px-5 justify-between">
