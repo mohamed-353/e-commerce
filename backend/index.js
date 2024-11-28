@@ -13,11 +13,10 @@ app.use(cookieParser());
 app.use(
   cors({
     origin: [process.env.FRONTEND_URL, "http://localhost:3000"],
-    credentials: true, // Required for cookies
-    methods: ["GET", "POST", "PUT", "DELETE"], // Explicitly list methods if you prefer stricter control
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
   })
 );
-
 
 app.use("/api", router);
 
