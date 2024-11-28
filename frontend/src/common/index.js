@@ -1,4 +1,4 @@
-const backendDomain = "http://localhost:8080"
+const backendDomain = "https://e-commerce-backend-rosy-one.vercel.app"
 
 const summaryApi = {
   signUp: {
