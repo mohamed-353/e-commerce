@@ -110,7 +110,7 @@ const Cart = () => {
         return;
       };
     });
-    
+
     handleCountQuantity();
     handleCountPrice()
 
