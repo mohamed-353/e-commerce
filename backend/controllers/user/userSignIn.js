@@ -43,7 +43,7 @@ const userSignIn = asyncWrapper(async (req, res, next) => {
     const tokenOptions = {
       httpOnly: true,
       secure: true,
-      sameSite: "Strict",
+      sameSite: "None",
     };
 
     res.cookie("token", token, tokenOptions).status(StatusCodes.OK).json({
