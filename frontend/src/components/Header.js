@@ -34,9 +34,10 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(summaryApi.userLogout.url, {
-        withCredentials: true,
-      });
+      const response = await axios.post(summaryApi.userLogout.url,
+        { user },
+        { withCredentials: true, }
+      );
 
       if (response.data.success) {
         dispatch(setUserDetails(null));
