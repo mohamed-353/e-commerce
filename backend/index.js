@@ -10,11 +10,14 @@ const app = express();
 app.use(express.json({ limit: '6mb' }));
 app.use(cookieParser());
 
-app.use(cors({
-  origin: ["http://localhost:3000", process.env.FRONTEND_URL],
-  methods: ["POST", "GET", "DELETE", "PUT", "PATCH"],
-  credentials: true,
-}));
+app.use(
+  cors({
+    origin: [process.env.FRONTEND_URL, "http://localhost:3000"],
+    credentials: true, // Required for cookies
+    methods: ["GET", "POST", "PUT", "DELETE"], // Explicitly list methods if you prefer stricter control
+  })
+);
+
 
 app.use("/api", router);
 

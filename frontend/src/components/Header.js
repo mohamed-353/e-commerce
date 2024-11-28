@@ -34,22 +34,23 @@ function Header() {
 
   const handleLogout = async () => {
     try {
-      const response = await axios.get(summaryApi.userLogout.url, {
+      const response = await axios.post(summaryApi.userLogout.url, {
         withCredentials: true,
       });
-      const responseData = response.data;
-      
-      if (responseData.success) {
+
+      if (response.data.success) {
         dispatch(setUserDetails(null));
-        navigate("/")
-        toast.success("logout successfully")
+        navigate("/");
+        toast.success("Logged out successfully");
       } else {
-        toast.error(responseData.message);
+        toast.error(response.data.message);
       }
     } catch (error) {
+      console.error("Logout Error:", error.response || error);
       toast.error("An error occurred during logout.");
     }
   };
+
 
   const handelSearch = async (e) => {
     const { value } = e.target;
@@ -68,6 +69,18 @@ function Header() {
       setDisableMenu(false)
     }
   }, [user, context.cartProductCount]);
+
+  useEffect(() => {
+    const closeMenu = (e) => {
+      if (!e.target.closest(".menu-container")) {
+        setMenuDisplay(false);
+      }
+    };
+
+    document.addEventListener("click", closeMenu);
+    return () => document.removeEventListener("click", closeMenu);
+  }, []);
+
 
   return (
     <header className="h-20 shadow-md bg-white fixed w-full z-50">
