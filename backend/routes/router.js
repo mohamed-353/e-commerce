@@ -4,7 +4,7 @@ const router = express.Router();
 const verifyToken = require("../middleware/verifyToken");
 const allowedTo = require("../middleware/allowedTo");
 const userRoles = require("../utils/userRoles");
-const allowed = allowedTo(userRoles.MANAGER, userRoles.ADMIN)
+const allowed = allowedTo(userRoles.MANAGER || userRoles.ADMIN)
 
 // user
 const userSignUp = require("../controllers/user/userSignUp");
