@@ -3,8 +3,7 @@ const { StatusCodes } = require("http-status-codes");
 const httpStatusText = require("../../utils/httpStatusText")
 
 const userLogout = asyncWrapper(async (req, res, next) => {
-  await res.clearCookie("token")
-  console.log(await res.clearCookie("token"));
+  res.clearCookie("token")
 
   return res.json({
     success: true,
