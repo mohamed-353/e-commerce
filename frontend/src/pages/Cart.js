@@ -213,7 +213,7 @@ const Cart = () => {
             }
           </div>
 
-          <div className='bg-white w-[440px] h-56 fixed left-[1160px] shadow-lg'>
+          <div className='bg-white w-[440px] h-56  left-[1160px] shadow-lg'>
 
             <div className='h-16 bg-cyan-500 text-xl text-white rounded-lg shadow-lg'>
               <h1 className='p-5'>ORDER SUMMARY</h1>
