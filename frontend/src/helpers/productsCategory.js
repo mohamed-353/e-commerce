@@ -7,6 +7,8 @@ const productCategory = [
   { id: 6, label: "Printers", value: "printers" },
   { id: 7, label: "Processor", value: "processor" },
   { id: 8, label: "Refrigerator", value: "refrigerator" },
+  { id: 8, label: "Laptop", value: "laptop" },
+  { id: 8, label: "Bed", value: "bed" },
   { id: 9, label: "Speakers", value: "speakers" },
   { id: 10, label: "Trimmers", value: "trimmers" },
   { id: 11, label: "Televisions", value: "televisions" },
