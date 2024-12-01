@@ -12,12 +12,13 @@ const changeQuantity = asyncWrapper(async (req, res, next) => {
   const updateQuantity = await Promise.all(productsId.map((product, index) =>
     cartModel.updateOne({ _id: product._id }, { $set: { quantity: quantity[index] } })
   ));
+  console.log(quantity);
 
   return res.status(StatusCodes.OK).json({
     success: true,
     status: httpStatusText.SUCCESS,
     message: "User Cart Products",
-    data: quantity,
+    data: updateQuantity,
     code: StatusCodes.OK,
   });
 })

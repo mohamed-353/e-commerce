@@ -76,27 +76,27 @@ function Header() {
       <div className="h-full container mx-auto flex items-center px-5 justify-between">
         <div>
           <Link to="/">
-            <img src={logo} width={110} height={65} alt="logo" />
+            <img src={logo} className="w-[70px] md:w-[110px]" height={65} alt="logo" />
           </Link>
         </div>
 
-        <div className="hidden md:flex items-center w-full justify-between max-w-md border rounded-full focus-within:shadow-md pl-4">
+        <div className="flex items-center w-[130px] md:w-[300px] lg:w-full justify-between max-w-md border rounded-full focus-within:shadow-md pl-4">
           <input
             ref={inputRef}
             type="text"
             placeholder="search product here..."
-            className="searchBar placeholder:text-lg w-full outline-none px-4 py-2"
+            className="searchBar md:placeholder:text-lg w-full outline-none px-4 py-2"
             onChange={handelSearch}
           />
           <button
             onClick={handleSearchButtonClick}
-            className="text-2xl min-w-[55px] h-10 bg-cyan-500 flex items-center justify-center rounded-t-full rounded-r-full text-white"
+            className="text-xl md:text-2xl min-w-[40px] md:min-w-[55px] h-10 bg-cyan-500 flex items-center justify-center rounded-t-full rounded-r-full text-white"
           >
             <GrSearch />
           </button>
         </div>
 
-        <div className="flex items-center gap-7 select-none">
+        <div className="flex items-center gap-3 md:gap-8 select-none">
           <div className="relative flex justify-center">
 
             <div
@@ -106,7 +106,7 @@ function Header() {
               {user?.profilePic ? (
                 <img
                   src={user.profilePic}
-                  className="w-16 h-16 rounded-full"
+                  className="w-11 h-11 md:w-16 md:h-16 rounded-full"
                   alt={user.name}
                 />
               ) : (
@@ -130,20 +130,20 @@ function Header() {
           </div>
 
           {user?._id ? (
-            <Link to={"/cart"} className="text-3xl relative cursor-pointer">
+            <Link to={"/cart"} className="text-2xl md:text-3xl relative cursor-pointer">
               <span>
                 <FaShoppingCart />
               </span>
-              <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-1 -right-2">
+              <div className="bg-red-600 text-white w-4 h-4 md:w-5 md:h-5 rounded-full p-1 flex items-center justify-center absolute -top-1 -right-2">
                 <p className="text-xs">{context?.cartProductCount}</p>
               </div>
             </Link>
           ) : (
-            <button onClick={handelNotLogin} className="text-3xl relative cursor-pointer">
+            <button onClick={handelNotLogin} className="text-2xl md:text-3xl relative cursor-pointer">
               <span>
                 <FaShoppingCart />
               </span>
-              <div className="bg-red-600 text-white w-5 h-5 rounded-full p-1 flex items-center justify-center absolute -top-1 -right-2">
+              <div className="bg-red-600 text-white w-4 h-4 md:w-5 md:h-5 rounded-full p-1 flex items-center justify-center absolute -top-1 -right-2">
                 <p className="text-xs">0</p>
               </div>
             </button>
@@ -153,14 +153,14 @@ function Header() {
             {user?._id ? (
               <button
                 onClick={handleLogout}
-                className="text-xl px-3 bg-cyan-500 py-1 rounded-full text-white hover:bg-cyan-600"
+                className="md:text-xl px-3 bg-cyan-500 py-1 rounded-full text-white hover:bg-cyan-600"
               >
                 Logout
               </button>
             ) : (
               <Link
                 to="/login"
-                className="text-xl px-3 bg-cyan-500 py-1 rounded-full text-white hover:bg-cyan-600"
+                className="md:text-xl px-3 bg-cyan-500 py-1 rounded-full text-white hover:bg-cyan-600"
               >
                 Login
               </Link>
