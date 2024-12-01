@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
 import productCategory from '../helpers/productsCategory'
 import axios from 'axios'
@@ -6,11 +6,13 @@ import summaryApi from '../common'
 import displayAEDCurrency from '../helpers/displayCurrency'
 import addToCart from '../helpers/addToCart'
 import { toast } from 'react-toastify'
+import Context from '../context'
 
 const ProductCategory = () => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const loadingList = new Array(12).fill(false)
+  const { fetchAddToCartCount } = useContext(Context)
   const navigate = useNavigate()
 
   const location = useLocation()
@@ -50,7 +52,9 @@ const ProductCategory = () => {
 
   const handleAddToCart = async (e, id) => {
     await addToCart(e, id, 1);
+    fetchAddToCartCount();
   }
+
   const handleSelectCategory = async (e) => {
     const { value, checked } = e.target
     setSelectCategory((prev) => {
@@ -73,9 +77,6 @@ const ProductCategory = () => {
     }
   }
 
-  useEffect(() => {
-    fetchProducts()
-  }, [filterCategoryList])
 
   useEffect(() => {
     const arrayOfCategories = Object.keys(selectCategory).map(categoryKey => {
@@ -96,6 +97,10 @@ const ProductCategory = () => {
 
     navigate(`/product-category?${urlFormat.join("")}`)
   }, [selectCategory])
+
+  useEffect(() => {
+    fetchProducts()
+  }, [filterCategoryList])
 
   useEffect(() => {
 
