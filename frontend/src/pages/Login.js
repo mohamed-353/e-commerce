@@ -37,7 +37,6 @@ const Login = () => {
         const responseData = response.data;
 
         if (responseData.success) {
-          toast.success("from login", responseData)
           navigate("/");
           fetchUserDetails();
           fetchAddToCartCount();

@@ -22,7 +22,7 @@ const AdminPanel = () => {
   }, [navigate, user]);
 
   return (
-    <div className='min-h-[calc(100vh-120px)] md:flex hidden select-none'>
+    <div className='min-h-[calc(100vh-120px)] flex select-none'>
 
       <aside className='bg-white mt-1 min-h-full w-full max-w-60 customShadow'>
 
@@ -50,7 +50,7 @@ const AdminPanel = () => {
 
       </aside>
 
-      <main className='w-full h-full p-2'>
+      <main className='md:w-full h-full p-2'>
         <Outlet />
       </main>
 
