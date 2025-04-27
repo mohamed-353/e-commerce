@@ -11,6 +11,11 @@ import ProductCategory from "../pages/ProductCategory";
 import ProductDetails from "../pages/ProductDetails";
 import Cart from "../pages/Cart";
 import SearchProduct from "../pages/SearchProduct";
+import Cancel from "../pages/Cancel";
+import Success from "../pages/Success";
+import Order from "../pages/Order";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -59,8 +64,28 @@ const router = createBrowserRouter([
         element: <Cart />
       },
       {
+        path: "success",
+        element: <Success />
+      },
+      {
+        path: "cancel",
+        element: <Cancel />
+      },
+      {
+        path: "order",
+        element: <Order />
+      },
+      {
         path: "search",
         element: <SearchProduct />
+      },
+      {
+        path: "about",
+        element: <About />
+      },
+      {
+        path: "contact",
+        element: <Contact />
       },
     ],
   },

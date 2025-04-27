@@ -32,6 +32,10 @@ const deleteCartProduct = require("../controllers/product/deleteCartProduct");
 const searchProduct = require("../controllers/product/searchProduct");
 const filterProduct = require("../controllers/product/filterProduct");
 
+// payment & order
+const payment = require("../controllers/order/payment");
+const webHook = require("../controllers/order/webHook");
+
 // auth
 router.post("/signUp", userSignUp);
 router.post("/signIn", userSignIn);
@@ -61,5 +65,9 @@ router.get("/cartProducts", verifyToken, cartProducts)
 router.get("/getQuantity", verifyToken, getQuantity)
 router.post("/changeQuantity", verifyToken, changeQuantity)
 router.delete("/deleteCartProduct", verifyToken, deleteCartProduct)
+
+// payment & order
+router.post("/checkout", verifyToken, payment)
+router.post("/webhook", webHook)
 
 module.exports = router;

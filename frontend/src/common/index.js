@@ -1,5 +1,7 @@
 const backendDomain = "https://e-commerce-backend-rosy-one.vercel.app"
-// a
+//const backendDomain = "http://localhost:8080"
+
+
 const summaryApi = {
   signUp: {
     url: `${backendDomain}/api/signUp`,
@@ -87,6 +89,10 @@ const summaryApi = {
   },
   filterProduct: {
     url: `${backendDomain}/api/filterProduct`,
+    method: "post",
+  },
+  payment: {
+    url: `${backendDomain}/api/checkout`,
     method: "post",
   },
 }
