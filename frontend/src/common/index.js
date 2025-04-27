@@ -1,5 +1,5 @@
 const backendDomain = "https://e-commerce-backend-rosy-one.vercel.app"
-
+// a
 const summaryApi = {
   signUp: {
     url: `${backendDomain}/api/signUp`,

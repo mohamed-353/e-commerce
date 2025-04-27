@@ -3,7 +3,7 @@ const asyncWrapper = require("../../middleware/asyncWrapper");
 const appError = require("../../error/appError");
 const { StatusCodes } = require("http-status-codes");
 const httpStatusText = require("../../utils/httpStatusText");
-
+// a
 const allProducts = asyncWrapper(async (req, res, next) => {
   const sessionUserId = req.user._id; // Get the user's ID from the session
   let products;
