@@ -25,6 +25,9 @@ const About = () => {
               <li className="text-xl font-semibold text-black text-center mb-2">
                 منار أيمن القباري — رقم الجلوس: 65309
               </li>
+              <li className="text-xl font-semibold text-black text-center mb-2">
+                مودة خيري عبد الستار — رقم الجلوس: 66264
+              </li>
             </ul>
           </div>
         </div>
